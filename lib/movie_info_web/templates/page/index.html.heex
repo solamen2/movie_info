@@ -1,4 +1,4 @@
-<section class="phx-hero">
+<!--<section class="phx-hero">
   <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
   <p>Peace of mind from prototype to production</p>
 </section>
@@ -38,10 +38,16 @@
       </li>
     </ul>
   </article>
-</section>
+</section>-->
+
+<!-- TODO: Make this a GET someday -->
+
+<%= form_for @conn, Routes.page_path(@conn, :movie_info_form), fn f -> %>
+  <%= text_input f, :search_term, placeholder: "Enter your search term here" %>  <%= submit do: "Submit" %>
+<% end %>
 
 <div class="phx-imdb-data">
-  <h1>IMDB data for Memento</h1>
+  <h1>IMDB data for: "<%= @search_term %>"</h1>
   <p>Status code: <%= @status %></p>
   <p>Media item: <%= @media_item %></p>
   <p>Headers: <%= @headers %></p>

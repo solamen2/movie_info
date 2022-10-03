@@ -18,6 +18,8 @@ defmodule MovieInfoWeb.Router do
     pipe_through :browser
 
     get "/movie_info/:search_term", PageController, :movie_info
+
+    post "/movie_info", PageController, :movie_info_form
   end
 
   # Other scopes may use custom stacks.
