@@ -17,6 +17,8 @@ defmodule MovieInfoWeb.Router do
   scope "/", MovieInfoWeb do
     pipe_through :browser
 
+    # CONSIDER: Use "resources" to maybe configure these instead
+
     get "/movie_info/:search_term", PageController, :movie_info
 
     post "/movie_info", PageController, :movie_info_form
