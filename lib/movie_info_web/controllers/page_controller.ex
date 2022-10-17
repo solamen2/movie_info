@@ -4,7 +4,7 @@ defmodule MovieInfoWeb.PageController do
   alias MovieInfo.MovieInfo, as: MovieInfo
   # Alias below can be removed I believe, in views and controllers and templates
   alias MovieInfoWeb.Router.Helpers, as: Routes
-  # TODO: Implement "action_fallback" for error handling
+  # TODO: Implement "action_fallback" for to handle errors
 
   # GET
   # TODO: Probably this should be "show" after the router uses "resources", see https://hexdocs.pm/phoenix/controllers.html#actions
