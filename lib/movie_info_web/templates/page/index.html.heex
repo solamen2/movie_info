@@ -51,4 +51,10 @@
   <p>Status code: <%= @status %></p>
   <p>Media item: <%= @media_item %></p>
   <p>Headers: <%= @headers %></p>
+  <p>Test text from controller: <%= @controller_test %></p>
+  <p>Test text from view: <%= test_func() %></p>
 </div>
+
+<MovieInfoWeb.TestComponent.city name="Largo"/>
+<MovieInfoWeb.TestComponent.country name="United States"/>
+<%= render(MovieInfoWeb.PageView, "test.html", message: "Hello from layout!") %> <!--MovieInfoWeb.PageView is redundant because we're in the /page directory -->

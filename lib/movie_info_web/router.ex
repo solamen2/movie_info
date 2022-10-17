@@ -17,7 +17,7 @@ defmodule MovieInfoWeb.Router do
   scope "/", MovieInfoWeb do
     pipe_through :browser
 
-    # CONSIDER: Use "resources" to maybe configure these instead
+    # CONSIDER: Use "resources" to maybe configure these instead, and maybe a separate scope
 
     get "/movie_info/:search_term", PageController, :movie_info
 

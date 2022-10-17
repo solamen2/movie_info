@@ -8,6 +8,7 @@ defmodule MovieInfo.MovieInfo do
   plug Tesla.Middleware.JSON
 
   def fetch_imdb_data(search_term) do
+    # FYI: Models go in the directory at the same level as movie_info.ex, but will be in different files.
     search_term =
       search_term
       |> URI.decode()
