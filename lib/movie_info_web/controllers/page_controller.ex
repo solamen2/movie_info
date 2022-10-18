@@ -8,10 +8,10 @@ defmodule MovieInfoWeb.PageController do
 
   # GET
   # TODO: Probably this should be "show" after the router uses "resources", see https://hexdocs.pm/phoenix/controllers.html#actions
-  def movie_info(conn, params) do
-    search_term = Map.fetch!(params, "search_term")
-
+  @spec movie_info(Plug.Conn.t(), map) :: Plug.Conn.t()
+  def movie_info(conn, %{"search_term" => search_term} = params) do
     response = MovieInfo.fetch_imdb_data(search_term)
+    IO.inspect(params)
     headers_encoded = Enum.map(response.headers, &Tuple.to_list/1)
 
     media_item = Map.fetch!(response.body, "d") |> Enum.at(0)
