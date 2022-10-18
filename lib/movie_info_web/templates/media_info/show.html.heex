@@ -1,0 +1,24 @@
+<h1>Show Media info</h1>
+
+<ul>
+
+  <li>
+    <strong>Search Term:</strong>
+    <%= @search_term %>
+  </li>
+
+  <li>
+    <strong>Media:</strong>
+    <%= @media_info.media_id %>
+  </li>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @media_info.title %>
+  </li>
+
+</ul>
+
+<%= form_for @conn, Routes.media_info_path(@conn, :movie_info_form), fn f -> %>
+  <%= text_input f, :search_term, placeholder: "Enter your search term here" %>  <%= submit do: "Submit" %>
+<% end %>-->

@@ -19,9 +19,9 @@ defmodule MovieInfoWeb.Router do
 
     # CONSIDER: Use "resources" to maybe configure these instead, and maybe a separate scope
 
-    get "/movie_info/:search_term", PageController, :movie_info
+    get "/media_info/:search_term", MediaInfoController, :show
 
-    post "/movie_info", PageController, :movie_info_form
+    post "/media_info", MediaInfoController, :movie_info_form
   end
 
   # Other scopes may use custom stacks.
