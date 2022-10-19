@@ -17,11 +17,10 @@ defmodule MovieInfoWeb.Router do
   scope "/", MovieInfoWeb do
     pipe_through :browser
 
-    # CONSIDER: Use "resources" to maybe configure these instead, and maybe a separate scope
-
     get "/media_info/:search_term", MediaInfoController, :show
 
-    post "/media_info", MediaInfoController, :movie_info_form
+    # CONSIDER: Is having a bare path that expects a form body a good idea?
+    get "/media_info", MediaInfoController, :show_form
   end
 
   # Other scopes may use custom stacks.

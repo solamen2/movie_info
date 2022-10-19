@@ -1,4 +1,4 @@
-defmodule MovieInfo.MovieInfo do
+defmodule MovieInfo.GetImdbInfo do
   use Tesla
 
   plug Tesla.Middleware.BaseUrl,

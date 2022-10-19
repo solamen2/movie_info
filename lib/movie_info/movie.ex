@@ -6,7 +6,7 @@ defmodule MovieInfo.Movie do
   import Ecto.Query, warn: false
   alias MovieInfo.Repo
   alias MovieInfo.Movie.MediaInfo
-  alias MovieInfo.MovieInfo, as: MI
+  alias MovieInfo.GetImdbInfo
 
   @doc """
   Returns the list of media_info.
@@ -33,7 +33,7 @@ defmodule MovieInfo.Movie do
 
   """
   def get_media_info!(search_term) do
-    response = MI.fetch_imdb_data(search_term)
+    response = GetImdbInfo.fetch_imdb_data(search_term)
     # headers_encoded = Enum.map(response.headers, &Tuple.to_list/1)
 
     media_item = Map.fetch!(response.body, "d") |> Enum.at(0)

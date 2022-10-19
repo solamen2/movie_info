@@ -19,6 +19,6 @@
 
 </ul>
 
-<%= form_for @conn, Routes.media_info_path(@conn, :movie_info_form), fn f -> %>
+<%= form_for @conn, Routes.media_info_path(@conn, :show_form), [method: "get"], fn f -> %>
   <%= text_input f, :search_term, placeholder: "Enter your search term here" %>  <%= submit do: "Submit" %>
-<% end %>-->
+<% end %>
