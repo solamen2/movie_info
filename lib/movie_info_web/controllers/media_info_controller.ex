@@ -3,25 +3,22 @@ defmodule MovieInfoWeb.MediaInfoController do
   use Phoenix.HTML
 
   alias MovieInfo.Movie
-  alias MovieInfo.Movie.MediaInfo
+
   # TODO: Implement "action_fallback" for to handle errors
 
-  def index(conn, _params) do
+  def index(_conn, _params) do
     raise "TODO: Implement index"
   end
 
   def show(conn, %{"search_term" => search_term}) do
     media_info = Movie.get_media_info!(search_term)
 
-    # TODO: map the media info properly
     conn
     # TODO: Maybe can make this nicer with JSON rendering in Phoenix, see https://hexdocs.pm/phoenix/views.html#rendering-json
     |> assign(:search_term, search_term)
     |> render("show.html", media_info: media_info)
   end
 
-  # POST
-  # TODO: Make this a GET request someday and rename it to something besides "movie_info_form"
   @spec show_form(Plug.Conn.t(), map) :: Plug.Conn.t()
   def show_form(conn, params) do
     search_term =
